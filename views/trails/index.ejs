@@ -1,0 +1,10 @@
+<ul>
+  <% trails.forEach((oneTrail) => { %>
+    <li>
+      <h2> <%= oneTrail.trailName %> </h2>
+      <p> <%= oneTrail.trailLength %> </p>
+      <img src="<%= oneTrail.trailMap %>">
+      <a href="/trails/<%=oneTrail._id %>">Details</a>
+    </li>
+  <% }) %>
+</ul>

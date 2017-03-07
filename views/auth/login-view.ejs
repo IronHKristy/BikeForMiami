@@ -1,0 +1,28 @@
+<form action="/login" method="POST" id="form">
+
+  <% if (errorMessage.length > 0) { %>
+    <p class='error'> <%=errorMessage%> </p>
+    <% } %>
+
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="JonSnow">
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Your password">
+    <br><br>
+    <button>Login</button>
+
+    <br>
+
+
+    <a href="/auth/google">
+      <img src="/images/google.png" class="login-buttons">
+    </a>
+
+    <a href="/auth/facebook">
+      <img src="/images/facebook.png" class="login-buttons">
+    </a>
+
+
+</form>
