@@ -4,12 +4,13 @@ const Schema = mongoose.Schema;
 //file in models
 const Review = require('./reviews.js');
 
+
 const trailSchema = new Schema({
   trailName: String,
   trailLength: String,
   trailMap: String,
-  trailPhotos: String
-  //reviews: [Review.schema]
+  trailPhotos: String,
+
 });
 
 const Trail = mongoose.model("Trail", trailSchema);
