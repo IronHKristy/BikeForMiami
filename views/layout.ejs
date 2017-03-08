@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
     <link href="/bootstrap/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
 
     <link href="/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -20,10 +19,14 @@
       </div>
 
       <div class="col-lg-7 nav-bar">
+        <!-- squid if (userInfo) { -->
+        <a class="nav-link w-nav-link" href="/logout">Logout</a>
+
+        <!-- squid } else {  -->
         <a class="nav-link w-nav-link" href="/signup">Signup</a>
         <a class="nav-link w-nav-link" href="/login">Login</a>
-        <a class="nav-link w-nav-link" href="/logout">Logout</a>
         <a class="nav-link w-nav-link" href="/trails">Trails</a>
+        <!-- squid }  -->
       </div>
     </div>
   </div>
@@ -31,7 +34,7 @@
     <%- body -%>
 
       <div class="container-fluid footer">
-        <p> Made with &#9760; at IronHack </p>
+        <p> About Us </p>
       </div>
     <script src="js/bootstrap.min.js"></script>
   </body>

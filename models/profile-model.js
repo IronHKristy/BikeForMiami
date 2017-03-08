@@ -8,6 +8,16 @@ const Schema = mongoose.Schema;
 //   noteReviews: [populated from where?]
 // });
 
+//delete after testing
+const profileSchema = new Schema({
+  trailName: String,
+  trailLength: String,
+  trailMap: String
+  // reviews: [Review.schema]
+  // userPhotos: {},
+  // userNotes: {}
+});
+
 const Profile = mongoose.model("Profile", profileSchema);
 
 module.exports = Profile;

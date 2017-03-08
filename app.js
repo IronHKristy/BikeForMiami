@@ -10,14 +10,18 @@ const session      = require('express-session');
 const passport     = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const FbStrategy    = require('passport-facebook').Strategy;
-// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const bcrypt        = require('bcrypt');
 const flash         = require('connect-flash');
+const dotenv = require('dotenv');
 
-// require('dotenv').config();
+
+dotenv.config();
 
 const User          = require('./models/user-model.js');
 const Trail = require('./models/trail-model.js');
+const Profile = require('./models/profile-model.js');
+const Reviews = require('./models/reviews.js');
 
 //uncomment line below when testing locally
 mongoose.connect('mongodb://localhost/bike-for-miami');
@@ -31,23 +35,15 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// default value for title local
-// app.locals.title = 'Express - Generated with IronGenerator';
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
-
-// const index = require('./routes/index.js');
-// const authRoutes = require('./routes/auth-routes.js');
-// app.use('/', index);
-// // app.use('/users', users);
-// app.use('/', authRoutes);
 
 
 app.use(session({
@@ -58,6 +54,17 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.serializeUser((user, cb) => {
+  cb(null, user._id);
+});
+
+passport.deserializeUser((userId, cb) => {
+  User.findById(userId, (err, user) => {
+    cb(err, user);
+  });
+});
+
 
 passport.use(new LocalStrategy((username, password, next) => {
   User.findOne({ username }, (err, user) => {
@@ -73,52 +80,62 @@ passport.use(new LocalStrategy((username, password, next) => {
   });
 }));
 
-passport.use(new FbStrategy({
-  //erase credentials before pushing
-  //change the 2 below to correct credentials from Facebook Development when testing locally
-  clientID: "1391610447578300",
-  clientSecret: "68140cb2188d480a229e8c84c8f7b1e5",
-  //.......................................................................
-  //uncomment out the two below after deployment
-  // clientID: process.env.FB_CLIENT_ID,
-  // clientSecret: process.env.FB_CLIENT_SECRET,
-  //........................................................................
-  //uncomment out line below when testing locally
-  callbackURL: 'http://localhost:3000/auth/facebook/callback'
+passport.use(new FbStrategy(
+  {
+    clientID: process.env.FB_CLIENT_ID,
+    clientSecret: process.env.FB_CLIENT_SECRET,
+    callbackURL: process.env.HOST_ADDRESS + '/auth/facebook/callback'
+  },
+  saveSocialUser // <──◉ social login callback
+));
 
-  //and comment this line out. For deploying on Heroku
-  // callbackURL: process.env.HOST_ADDRESS + '/auth/facebook/callback'
-  //........................................................................
-}, (accessToken, refreshToken, profile, done) => {
-  done(null, profile);
-}));
+passport.use(new GoogleStrategy(
+  {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.HOST_ADDRESS + '/auth/google/callback'
+  },
+  saveSocialUser // <──◉ social login callback
+));
 
-// passport.use(new GoogleStrategy({
-//   clientID: "712495193970-pvip1ap9uppri5r8mpqurhu4vou527qg.apps.googleusercontent.com",
-//   clientSecret: '...',
-//   callbackURL: 'http://localhost:3000/auth/google/callback'
-// }, (accessToken, refreshToken, profile, next) => {
-//   next(null, profile);
-// }));
 
-passport.serializeUser((user, cb) => {
-  if (user.provider) {
-    cb(null, user);
+function saveSocialUser (accessToken, refreshToken, profile, done) {
+  // See if there's a user from the provider with the given id.
+  User.findOne(
+    { provider: profile.provider, providerId: profile.id },
+    (err, userDocument) => {
+      // If there's an error or a user was retrieved, notify Passport by calling "done()".
+      if (err || userDocument) {
+        done(err, userDocument);
+        return;
+      }
+
+      // Otherwise attempt to save a new user (no username or password).
+      const names = profile.displayName.split(' ');
+      const theUser = new User({
+        firstName: names[0],
+        lastName: names.slice(1).join(' '),
+        provider: profile.provider,
+        providerId: profile.id
+      });
+
+      theUser.save((err, userDocument) => {
+        // Notify Passport about the result by calling "done()".
+        done(err, userDocument);
+      });
+    }
+  );
+}
+
+// Send logged-in user info into every view
+app.use((req, res, next) => {
+  if (req.isAuthenticated()) {
+    res.locals.user = req.user;
   } else {
-    cb(null, user._id);
-  }
-});
-
-passport.deserializeUser((id, cb) => {
-  if (id.provider) {
-    cb(null, id);
-    return;
+    res.locals.user = null;
   }
 
-  User.findOne({ "_id": id }, (err, user) => {
-    if (err) { return cb(err); }
-    cb(null, user);
-  });
+  next();
 });
 
 
@@ -131,6 +148,12 @@ app.use('/', authRoutes);
 
 const trailsRoutes = require('./routes/trails-routes.js');
 app.use('/', trailsRoutes);
+
+const reviewsRoutes = require('./routes/trail-reviews.js');
+app.use('/', trailsRoutes);
+
+// const userProfiles = require('./routes/user-profiles.js');
+// app.use('/', userProfiles);
 
 
 

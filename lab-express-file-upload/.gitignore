@@ -28,9 +28,3 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
-
-# Picture uploads folder
-public/uploads
-
-#Environment variables file
-.env

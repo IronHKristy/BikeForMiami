@@ -1,3 +1,4 @@
+<title><%= trail.trailName %></title>
 <ul>
     <li>
       <h2> <%= trail.trailName %> </h2>
@@ -5,17 +6,19 @@
       <img src="<%= trail.trailMap %>">
     </li>
 </ul>
-      <!-- <a href="/products/squid=product._id squid/reviews/new">
-        Review this product
-      </a>
-    </br> -->
-      <!-- Will send people to page based on product id -->
-        <h2> Rider Notes </h2>
-        <!-- <ul>
-            squid product.reviews.forEach((oneReview) => { squid
-          <li>
-            <p>squid= oneReview.content squid</p>
-            <p>squid= oneReview.email squid</p>
-          </li>
-          squid  }); squid
-        </ul> -->
+
+
+<h1> Add New Picture </h1>
+
+<!-- tried "/trails/:id" -->
+<!-- "/trails/squid=oneTrail._id squid" -->
+<!-- "/trails._id" -->
+<form action="/trails" method="post" enctype="multipart/form-data">
+
+  <div>
+    <label for="picture-input"> Picture </label>
+    <input id="picture-input" type="file" name="picture">
+  </div>
+
+  <button> Add Picture </button>
+</form>

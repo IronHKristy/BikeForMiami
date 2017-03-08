@@ -1,0 +1,13 @@
+<h1> Review <%= trail.name %> </h1>
+    <!-- views/product-reviews/new.ejs -->
+<form action="/trails/<%= trail._id %>/reviews" method="POST">
+  <label for="email">Email Address</label>
+  <input type="text" name="email" id="email">
+
+  <label for="content">Content</label>
+  <textarea name="content" rows="3" cols="80"></textarea>
+
+  <button type="submit">Submit Review</button>
+</form>
+  </body>
+</html>
