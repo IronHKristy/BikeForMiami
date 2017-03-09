@@ -1,24 +1,36 @@
 <title><%= trail.trailName %></title>
-<ul>
-    <li>
-      <h2> <%= trail.trailName %> </h2>
-      <p> <%= trail.trailLength %> </p>
-      <img src="<%= trail.trailMap %>">
-    </li>
-</ul>
+
+<div class="row trail-margin-top">
+  <div class="col-lg-8">
+    <ul>
+        <li>
+          <h2> <%= trail.trailName %> </h2>
+          <p> <%= trail.trailLength %> </p>
+        </li>
+    </ul>
+  </div>
+
+  <div class="col-lg-4">
+    <img src="<%= trail.trailMap %>">
+  </div>
+</div>
 
 
 <h1> Add New Picture </h1>
 
-<!-- tried "/trails/:id" -->
-<!-- "/trails/squid=oneTrail._id squid" -->
-<!-- "/trails._id" -->
-<form action="/trails/<%= id %>" method="post" enctype="multipart/form-data">
+
+<form action="/trails/<%= trail._id %>" method="post" enctype="multipart/form-data">
 
   <div>
     <label for="picture-input"> Picture </label>
     <input id="picture-input" type="file" name="picture">
   </div>
   <br>
-  <button> Add Picture </button>
+  <button type="submit"> Add Picture </button>
 </form>
+
+<ul>
+    <li>
+      <img src="<%= trail.trailPhotos %>">
+    </li>
+</ul>

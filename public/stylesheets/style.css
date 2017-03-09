@@ -91,6 +91,16 @@ a {
 }
 /*-----------------------------------*/
 
+/*individual trail pages*/
+.trail-margin-top {
+  margin-top: 20px;
+}
+
+.trail-margin-top ~ li {
+  margin-left: 20px;
+}
+/*--------------------------------------*/
+
 #form {
   margin: 30px auto;
   width: 380px;

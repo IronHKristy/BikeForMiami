@@ -28,21 +28,20 @@ trailsRoutes.get('/trails', (req, res) => {
 trailsRoutes.get('/trails/:id', (req, res, next) => {
   const id = req.params.id;
 
-  Trail.findById(id, (err, prodDoc) => {
+  Trail.findById(id, (err, theTrail) => {
     if (err) {
       next(err);
       return;
     }
-console.log(req.params.id);
     res.render('trails/show', {
       id: req.params.id,
-      trail: prodDoc
+      trail: theTrail
     });
   });
 });
 
 
-trailsRoutes.post('/trails/:id', upload.single('photo'), function(req, res){
+trailsRoutes.post('/trails/:id', upload.single('picture'), function(req, res){
   const id = req.params.id;
 
   updatedTrail = {
@@ -54,24 +53,12 @@ trailsRoutes.post('/trails/:id', upload.single('photo'), function(req, res){
       console.log("There was an error updating the trail with a picture");
       res.redirect('/');
     } else {
-
+      res.redirect('/trails');
     }
   });
 });
-//------------------------------------------------------------
-// trailsRoutes.post('/trails',
-//
-//   //single allows them to only be able to upload one photo
-//   uploads.single('picture'),
-//
-//   (req, res, next) => {
-//       const filename = req.file.filename;
-//
-//   const newPhoto = new Photo ({
-//     trailPhotos: `/uploads/${filename}`,
-//     // owner: req.user._id   // <-- we add the user ID
-//   });
-//
+
+// --------------------------------------------
 //   newPhoto.save((err) => {
 //     if (err) {
 //       next(err);

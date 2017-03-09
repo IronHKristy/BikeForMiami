@@ -30,16 +30,6 @@ const Schema = mongoose.Schema;
 }
 ];
 
-// Trail.create(supaTrailer, (err, docs) => {
-//   if (err) {
-//     throw err;
-//   }
-//
-//   docs.forEach((supaTrailer) => {
-//     console.log(supaTrailer.trailName);
-//   });
-//   mongoose.connection.close();
-// });
 
 Trail.create(trails, (err,docs) => {
   // if (err) {
