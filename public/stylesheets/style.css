@@ -63,7 +63,7 @@ a {
 
 .footer {
   background-color: white;
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   right: 0;
   left: 0;
@@ -98,6 +98,15 @@ a {
 
 .trail-margin-top ~ li {
   margin-left: 20px;
+}
+
+.image-size-restriction {
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+
+.map-height {
+  max-height: 400px;
 }
 /*--------------------------------------*/
 

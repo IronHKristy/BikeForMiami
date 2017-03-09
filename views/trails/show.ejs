@@ -1,7 +1,7 @@
 <title><%= trail.trailName %></title>
 
 <div class="row trail-margin-top">
-  <div class="col-lg-8">
+  <div class="col-lg-6">
     <ul>
         <li>
           <h2> <%= trail.trailName %> </h2>
@@ -10,8 +10,8 @@
     </ul>
   </div>
 
-  <div class="col-lg-4">
-    <img src="<%= trail.trailMap %>">
+  <div class="col-lg-6">
+    <img class="map-height" src="<%= trail.trailMap %>">
   </div>
 </div>
 
@@ -29,8 +29,15 @@
   <button type="submit"> Add Picture </button>
 </form>
 
-<ul>
-    <li>
-      <img src="<%= trail.trailPhotos %>">
-    </li>
-</ul>
+
+<div class="row">\
+    <ul>
+      <% trail.trailPhotos.forEach((oneTrail) => { %>
+        <div class="col-md-4">
+        <li>
+          <img class="image-size-restriction" src="<%= oneTrail %>">
+        </li>
+      </div>
+        <% }) %>
+    </ul>
+  </div>

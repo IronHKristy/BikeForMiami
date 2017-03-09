@@ -33,6 +33,7 @@ trailsRoutes.get('/trails/:id', (req, res, next) => {
       next(err);
       return;
     }
+    console.log(theTrail);
     res.render('trails/show', {
       id: req.params.id,
       trail: theTrail
@@ -48,15 +49,18 @@ trailsRoutes.post('/trails/:id', upload.single('picture'), function(req, res){
     trailPhotos: `/uploads/${req.file.filename}`
 };
 
-  Trail.findByIdAndUpdate(id, updatedTrail, (err, model) => {
+  Trail.findByIdAndUpdate(id, {$push:updatedTrail}, {safe: true, upsert: true, new: true}, (err, model) => {
     if (err) {
+      console.log(err);
       console.log("There was an error updating the trail with a picture");
       res.redirect('/');
     } else {
       res.redirect('/trails');
+      // window.location.reload();
     }
   });
 });
+
 
 // --------------------------------------------
 //   newPhoto.save((err) => {

@@ -10,6 +10,34 @@ const Schema = mongoose.Schema;
 {
   trailName: "Brickell Key Trail",
   trailLength: "4 miles",
+  trailMap: "/images/map.png",
+  // userPhotos: {},
+  // userNotes: {}
+},
+{
+  trailName: "A.D. Barnes Park",
+  trailLength: "4 miles",
+  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
+  // userPhotos: {},
+  // userNotes: {}
+},
+{
+  trailName: "Anhinga Trail",
+  trailLength: "4 miles",
+  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
+  // userPhotos: {},
+  // userNotes: {}
+},
+{
+  trailName: "Arch Creek Trail",
+  trailLength: "4 miles",
+  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
+  // userPhotos: {},
+  // userNotes: {}
+},
+{
+  trailName: "Bayshore Loop",
+  trailLength: "4 miles",
   trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
   // userPhotos: {},
   // userNotes: {}
