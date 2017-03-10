@@ -46,18 +46,24 @@
             <br><br>
             <button>Create account</button>
 
-            <br>
-            <p class="account-message">
-              Do you already have an account?
-              <a href="/login">Login</a>
-            </p>
+            <br><br>
+              <button id="showLoginForm"> or Login</button>
+              <!-- <button><a href="/login"> or Login</a></button> -->
 
-
+              <script>
+              var button = document.getElementById('showLoginForm');
+              button.onclick = function() {
+                var div = document.getElementById('showLoginForm')
+              }
+              </script>
           </form>
+
+          <form method=" hidden">
           </div>
 
         </div>
         <% } %>
+
       </div>
     </div>
   </body>
