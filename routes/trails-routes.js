@@ -55,7 +55,7 @@ trailsRoutes.post('/trails/:id', upload.single('picture'), function(req, res){
       console.log("There was an error updating the trail with a picture");
       res.redirect('/');
     } else {
-      res.redirect('/trails');
+      res.redirect(`/trails/${id}`);
       // window.location.reload();
     }
   });

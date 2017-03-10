@@ -8,53 +8,112 @@ const Schema = mongoose.Schema;
 
   const trails = [
 {
-  trailName: "Brickell Key Trail",
-  trailLength: "4 miles",
-  trailMap: "/images/map.png",
-  // userPhotos: {},
-  // userNotes: {}
-},
-{
   trailName: "A.D. Barnes Park",
   trailLength: "4 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 },
 {
   trailName: "Anhinga Trail",
   trailLength: "4 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 },
 {
-  trailName: "Arch Creek Trail",
+  trailName: "Arch Creek Park",
   trailLength: "4 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 },
 {
   trailName: "Bayshore Loop",
   trailLength: "4 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 },
 {
-  trailName: "Key Biscayne Trail",
-  trailLength: "8 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailName: "Bear Cut Preserve",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 },
 {
-  trailName: "Bayshore Dr Trail",
-  trailLength: "6 miles",
-  trailMap: "https://gaiavectortilerendering.global.ssl.fastly.net/feet-raster/12/716/1642.png",
-  // userPhotos: {},
-  // userNotes: {}
+  trailName: "Bear Lake Trail",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Big Cypress National Preserve",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Bill Sadowski Park",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Biscayne National Park",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Bobcat Boardwalk",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Cape Florida Natural Trail",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
+},
+{
+  trailName: "Castellow Hammock Preserve",
+  trailLength: "4 miles",
+  trailMap: "/images/AD-Barnes-Park.jpg",
+  trailType: "Paved/Innerconnecting Trails",
+  trailFees: "Free",
+  trailDiff: "Moderate",
+  trailDesc: "Amid the pine flatwoods, the Sense of Wonder Nature Center is a gateway to this urban trail system. Along the paths you’ll find an observation deck set under the forest canopy, where strangler figs and oaks compete for light. Other highlights include man-made waterfalls over native oolite boulders and a butterfly garden."
 }
 ];
 

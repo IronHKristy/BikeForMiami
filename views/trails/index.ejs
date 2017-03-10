@@ -7,7 +7,7 @@
         <ul>
           <% trails.forEach((oneTrail) => { %>
           <li>
-            <h2> <a href="/trails/<%=oneTrail._id %>"><%= oneTrail.trailName %></a> </h2>
+            <h2 class="select-trail"> <a class="select-trail" href="/trails/<%=oneTrail._id %>"><%= oneTrail.trailName %></a> </h2>
           </li>
           <% }) %>
         </ul>

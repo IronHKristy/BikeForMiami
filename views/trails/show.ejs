@@ -1,12 +1,25 @@
 <title><%= trail.trailName %></title>
 
 <div class="container-fluid trail-index-background-image">
+
+  <div class="row park-name">
+    <h1><strong> <%= trail.trailName %> </strong></h1>
+  </div>
+
   <div class="row trail-margin-top">
     <div class="col-lg-6">
       <ul>
           <li>
-            <h2> <%= trail.trailName %> </h2>
-            <p> <%= trail.trailLength %> </p>
+            <h3> Length: <%= trail.trailLength %> </h3>
+          </li>
+          <li>
+            <h3> Difficulty: <%= trail.trailDiff %> </h3>
+          </li>
+          <li>
+            <h3> Type: <%= trail.trailType %> </h3>
+          </li>
+          <li>
+            <h3> Fees: <%= trail.trailFees %> </h3>
           </li>
       </ul>
     </div>
@@ -15,6 +28,11 @@
       <img class="map-height" src="<%= trail.trailMap %>">
     </div>
   </div>
+
+  <div class="row trail-description">
+    <h4> <%= trail.trailDesc %> </h4>
+  </div>
+
 </div>
 
 <% if (user) {%>
@@ -35,7 +53,7 @@
 
 
 
-<div class="row">\
+<div class="row div-top-border">
     <ul>
       <% trail.trailPhotos.forEach((oneTrail) => { %>
         <div class="col-md-4">

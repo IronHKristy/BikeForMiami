@@ -9,6 +9,10 @@ const trailSchema = new Schema({
   trailName: String,
   trailLength: String,
   trailMap: String,
+  trailType: String,
+  trailFees: String,
+  trailDiff: String,
+  trailDesc: String,
   trailPhotos: [ String ]
 });
 

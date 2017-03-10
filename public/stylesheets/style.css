@@ -9,6 +9,11 @@ body {
   background-color: rgba(0, 0, 0 , 0.57);
   padding: 20px;
 }
+
+ul {
+  list-style-type: none;
+}
+
 /*------------------------------------*/
 
 /*navigation bar and footer*/
@@ -106,9 +111,11 @@ a {
 /*Google Map Api*/
 #map {
   margin-top: 30px;
+  margin-left: 10px;
   height: 500px;
   width: 500px;
   border: 3px inset #032506;
+  color: black;
 }
 
 .scroll-box {
@@ -120,14 +127,23 @@ a {
   background-color: rgba(0, 0, 0, 0.56);
 }
 
+.select-trail {
+  color: rgba(255, 255, 255, 0.79);
+}
+
 /*-----------------------------------*/
 /*background for all other pages besides main*/
 .trail-index-background-image {
   height: 575px;
   background-image: url(/images/bike-trail-bg3.jpg);
+  color: rgba(255, 255, 255, 0.79);
 }
 
 /*individual trail pages*/
+.park-name {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.79);
+}
 .trail-margin-top {
   margin-top: 20px;
 }
@@ -142,11 +158,24 @@ a {
 }
 
 .map-height {
-  max-height: 400px;
+  max-height: 350px;
+  border: 4px solid white;
+}
+
+.trail-description {
+  margin-top: 29px;
+  padding-left: 39px;
+  padding-right: 58px;
+  color: rgba(255, 255, 255, 0.79);
 }
 
 .upload-picture-stuff {
   background-color: #ff5749;
+}
+
+.div-top-border {
+  border-top: 10px solid #ff5749;
+  padding-top: 10px;
 }
 /*--------------------------------------*/
 
@@ -203,5 +232,5 @@ a {
 }
 
 .login-buttons {
-  height: 47px;
+  width: 380px;
 }
