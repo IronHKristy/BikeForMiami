@@ -8,22 +8,22 @@ const User       = require("../models/user-model.js");
 // Bcrypt to encrypt passwords
 const bcrypt     = require("bcrypt");
 
-authRoutes.get("/signup", (req, res, next) => {
-  res.render("auth/signup-view.ejs");
+authRoutes.get("/", (req, res, next) => {
+  res.render("index");
 });
 
-authRoutes.post("/signup", (req, res, next) => {
+authRoutes.post("/", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
   if (username === "" || password === "") {
-    res.render("auth/signup-view.ejs", { message: "Indicate username and password" });
+    res.render("index", { message: "Indicate username and password" });
     return;
   }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup-view.ejs", { message: "The username already exists" });
+      res.render("index", { message: "The username already exists" });
       return;
     }
 
@@ -39,7 +39,7 @@ authRoutes.post("/signup", (req, res, next) => {
 
     newUser.save((err) => {
       if (err) {
-        res.render("auth/signup-view.ejs", { message: "Something went wrong" });
+        res.render("index", { message: "Something went wrong" });
       } else {
         req.flash('success', 'You have been registered. Try logging in.');
         res.redirect("/");

@@ -1,12 +1,13 @@
 body {
   margin: 0px;
   font: 14px Arial;
-  background-color: #f3f5e0;
+  background-color: white;
 
 }
 
 .main-div {
-  background-color: #386373;
+  background-color: rgba(0, 0, 0 , 0.57);
+  padding: 20px;
 }
 /*------------------------------------*/
 
@@ -53,32 +54,39 @@ a {
 }
 
 .nav-link:hover {
-  border-bottom-color: #f02e4e;
+  border-bottom-color: #ff5749;
 }
 
 .nav-link.w--current {
-  border-bottom-color: #f02e4e;
-  color: #f02e4e;
+  border-bottom-color: #ff5749;
+  color: #ff5749;
 }
 
 .footer {
-  background-color: white;
+  background-color: #ff5749;
   /*position: absolute;*/
   bottom: 0;
   right: 0;
   left: 0;
 }
+
+.footer-icons {
+  float: right;
+  margin-right: 30px;
+  height: 40px;
+}
 /*---------------------------------------*/
-/*index-page*/
+/*landing-page*/
 .index-main {
   height: 575px;
   background-image: url(/images/trail2.jpg);
 }
 
+
 .index-large-title {
   /*text-align: center;*/
   color: white;
-  margin-top: 143px;
+  margin-top: 170px;
   font-size: 64px;
 }
 
@@ -90,16 +98,34 @@ a {
 
 .title-text  {
   color: #ff5749;
+  /*margin-left: 50px;*/
 }
 
 /*-------------------------------------*/
+/*choose trail page*/
 /*Google Map Api*/
 #map {
-       height: 500px;
-       width: 500px;
-      }
+  margin-top: 30px;
+  height: 500px;
+  width: 500px;
+  border: 3px inset #032506;
+}
+
+.scroll-box {
+  height: 500px;
+  width: 500px;
+  margin-top: 30px;
+  margin-left: 40px;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.56);
+}
 
 /*-----------------------------------*/
+/*background for all other pages besides main*/
+.trail-index-background-image {
+  height: 575px;
+  background-image: url(/images/bike-trail-bg3.jpg);
+}
 
 /*individual trail pages*/
 .trail-margin-top {
@@ -117,6 +143,10 @@ a {
 
 .map-height {
   max-height: 400px;
+}
+
+.upload-picture-stuff {
+  background-color: #ff5749;
 }
 /*--------------------------------------*/
 
