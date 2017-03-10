@@ -69,26 +69,36 @@ a {
   left: 0;
 }
 /*---------------------------------------*/
-
-
 /*index-page*/
 .index-main {
   height: 575px;
-  background-image: url(/images/trail1light.jpg);
+  background-image: url(/images/trail2.jpg);
 }
 
 .index-large-title {
-  text-align: center;
+  /*text-align: center;*/
   color: white;
   margin-top: 143px;
   font-size: 64px;
 }
 
 .index-small-title {
-  text-align: center;
+  /*text-align: center;*/
   color: white;
   font-size: 20px;
 }
+
+.title-text  {
+  color: #ff5749;
+}
+
+/*-------------------------------------*/
+/*Google Map Api*/
+#map {
+       height: 500px;
+       width: 500px;
+      }
+
 /*-----------------------------------*/
 
 /*individual trail pages*/
