@@ -136,6 +136,9 @@ a {
 .trail-index-background-image {
   height: 575px;
   background-image: url(/images/bike-trail-bg3.jpg);
+}
+
+.change-text {
   color: rgba(255, 255, 255, 0.79);
 }
 
@@ -185,7 +188,7 @@ a {
 }
 
 #form label {
-  color: white;
+  /*color: white;*/
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
@@ -205,7 +208,7 @@ a {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 4px;
-  color: #fff;
+  /*color: #fff;*/
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
