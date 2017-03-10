@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect('mongodb://localhost/bike-for-miami');
+dotenv.config();
+mongoose.connect(process.env.MONGODB_URI);
 const Trail = require('../models/trail-model');
 const Schema = mongoose.Schema;
 
@@ -125,6 +127,6 @@ Trail.create(trails, (err,docs) => {
   docs.forEach((oneTrail) => {
     console.log(`${oneTrail.trailName} ${oneTrail._id}`);
   });
-
-  mongoose.disconnect();
 });
+
+setTimeout(() => mongoose.connection.close(), 2000);
