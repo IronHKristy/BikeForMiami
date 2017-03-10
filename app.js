@@ -24,7 +24,7 @@ const Profile = require('./models/profile-model.js');
 const Reviews = require('./models/reviews.js');
 
 //uncomment line below when testing locally
-mongoose.connect('mongodb://localhost/bike-for-miami');
+mongoose.connect(process.env.MONGODB_URI);
 //and comment out this line. This is is for deploying in Heroku
 // mongoose.connect(process.env.MONGODB_URI);
 
