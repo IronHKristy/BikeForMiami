@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bike for Miami</title>
-  </head>
-  <body>
-    <div class="container-fluid index-main">
-      <div class="row">
-        <div class="col-md-6">
-          <h1 class="index-large-title">
-            <strong class="title-text"> Bike for <br> Miami </strong>
-            <h1>
-            <h6 class="index-small-title">where users share their riding experiences</h6>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Bike for Miami</title>
+</head>
+<body>
+<div class="container-fluid index-main">
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="index-large-title">
+     <strong class="title-text"> Bike for <br> Miami </strong>
+    <h1>
+    <h6 class="index-small-title">where users share their riding experiences</h6>
+  </div>
 
-        <% if (!user) {%>
-        <div class="col-md-6">
-          <div>
-          <form class="main-div" action="/" method="post" id="form">
+<% if (!user) {%>
+  <div class="col-md-6">
+    <div class="main-div">
+    <button class="btn" data-toggle="collapse" data-target="#demo">SignUp</button>
+    <div id="demo" class="collapse">
+    <form action="/" method="post" id="form">
 
-            <% if (typeof message !== "undefined") { %>
-              <div class="error"><%= message %></div>
-              <% } %>
-
-            <div>
-              <label for="firstName">First Name</label>
-              <input id="firstName" type="text" name="firstName" placeholder="Jon">
-            </div> <br>
-
-            <div>
-              <label for="lastName">Last Name</label>
-              <input id="lastName" type="text" name="lastName" placeholder="Snow">
-            </div><br>
-
-            <div>
-              <label for="username">Username</label>
-              <input id="username" type="text" name="username" placeholder="JonSnow">
-            </div><br>
-
-            <div>
-              <label for="password">Password</label>
-              <input id="password" type="password" name="password" placeholder="Your password">
-            </div>
-
-            <br><br>
-            <button>Create account</button>
-
-            <br><br>
-              <button id="showLoginForm"> or Login</button>
-              <!-- <button><a href="/login"> or Login</a></button> -->
-
-              <script>
-              var button = document.getElementById('showLoginForm');
-              button.onclick = function() {
-                var div = document.getElementById('showLoginForm')
-              }
-              </script>
-          </form>
-
-          <form method=" hidden">
-          </div>
-
-        </div>
+      <% if (typeof message !== "undefined") { %>
+        <div class="error"><%= message %></div>
         <% } %>
 
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" type="text" name="firstName" placeholder="Jon">
+      </div> <br>
+
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" type="text" name="lastName" placeholder="Snow">
+      </div><br>
+
+      <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" placeholder="JonSnow">
+      </div><br>
+
+      <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Your password">
       </div>
+
+      <br><br>
+      <button>Create account</button>
+      <br><br>
+    </form>
     </div>
-  </body>
+  </div>
+  </div>
+<% } %>
+
+</div>
+</div>
+</body>
 </html>
