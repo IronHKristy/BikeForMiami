@@ -60,7 +60,7 @@ authRoutes.get('/login', (req, res, next) => {
 
 authRoutes.post('/login',
   passport.authenticate('local', {
-    successReturnToOrRedirect: '/',
+    successReturnToOrRedirect: '/trails',
     failureRedirect: '/login',
     failureFlash: true,
     successFlash: 'You have been logged in, user!',

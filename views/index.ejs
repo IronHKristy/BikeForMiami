@@ -14,45 +14,72 @@
     <h6 class="index-small-title">where users share their riding experiences</h6>
   </div>
 
-<% if (!user) {%>
-  <div class="col-md-6">
-    <div class="main-div">
-    <button class="btn" data-toggle="collapse" data-target="#demo">SignUp</button>
-    <div id="demo" class="collapse">
-    <form action="/" method="post" id="form">
 
-      <% if (typeof message !== "undefined") { %>
+
+<!-- put between here -->
+
+<% if (!user) {%>
+<div class="col-md-6 form-main">
+<div class="form-body">
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Sign In</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Join us!</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form action="/login" class="sa-innate-form" method="post">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <button type="submit">Sign In</button>
+            <a href="">Forgot Password?</a>
+            </form>
+            </div>
+            <div class="social-login">
+            <p>- - - - - - - - - - - - - Sign In With - - - - - - - - - - - - - </p>
+    		<ul>
+            <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="/auth/google"><i class="fa fa-google-plus"></i> Google+</a></li>
+            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+            </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+          <% if (typeof message !== "undefined") { %>
         <div class="error"><%= message %></div>
         <% } %>
-
-      <div>
-        <label for="firstName">First Name</label>
-        <input id="firstName" type="text" name="firstName" placeholder="Jon">
-      </div> <br>
-
-      <div>
-        <label for="lastName">Last Name</label>
-        <input id="lastName" type="text" name="lastName" placeholder="Snow">
-      </div><br>
-
-      <div>
-        <label for="username">Username</label>
-        <input id="username" type="text" name="username" placeholder="JonSnow">
-      </div><br>
-
-      <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="Your password">
-      </div>
-
-      <br><br>
-      <button>Create account</button>
-      <br><br>
-    </form>
+			<div class="innter-form">
+            <form class="sa-innate-form" method="post">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" name="firstName" placeholder="First Name">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <button type="submit">Join now</button>
+            </form>
+            </div>
+            <div class="social-login">
+            <p>- - - - - - - - - - - - - Register With - - - - - - - - - - - - - </p>
+			<ul>
+            <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="/auth/google"><i class="fa fa-google-plus"></i> Google+</a></li>
+            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+            </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  </div>
-<% } %>
+    </div>
+    </div>
+    </div>
+    </div>
+    <% } %>
+<!-- and here -->
 
 </div>
 </div>

@@ -109,7 +109,7 @@ a {
   margin-left: 10px;
   height: 500px;
   width: 500px;
-  border: 3px inset #032506;
+  border: 3px solid white;
   color: black;
 }
 
@@ -241,9 +241,14 @@ a {
 
 
 /*----------------------*/
-/*.form-body{
-    background:#fff;
+.form-main{
+  padding: 20px;
+}
+.form-body{
+    background:rgba(0, 0 ,0, 0.48);
+    width: 80%;
     padding:20px;
+    color: white;
 }
 .login-form{
     background:rgba(255,255,255,0.8);
@@ -266,7 +271,7 @@ a {
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
     color: #fff;
-    background-color: #d14d42;
+    background-color: #ff5749;
     border: none !important;
     border-bottom-color: transparent;
 	border-radius:none !important;
@@ -337,8 +342,8 @@ a {
 	}
 
 	.sa-innate-form button{
-	border:1px solid#e64b3b;
-	background:#e64b3b;
+	border:1px solid#ff5749;
+	background:#ff5749;
 	color:#fff;
 	padding:10px 25px;
 	font-size:14px;
@@ -352,4 +357,4 @@ a {
     .sa-innate-form p{
         font-size:13px;
         padding-top:10px;
-    }*/
+    }
