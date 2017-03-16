@@ -20,9 +20,7 @@
 
       <div class="col-lg-7 nav-bar">
         <a class="nav-link w-nav-link" href="/trails">Trails</a>
-        <% if (!user) {%>
-          <a class="nav-link w-nav-link" href="/login">Login</a>
-        <% } else { %>
+        <% if (user) {%>
           <a class="nav-link w-nav-link" href="/logout">Logout</a>
         <% }  %>
       </div>
